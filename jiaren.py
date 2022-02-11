@@ -36,9 +36,9 @@ def active():
     try:
         if driver.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
            print('已签到')
-    finaly:
+    finally:
         driver.quit()
       
 if __name__ == '__main__':
-  #  active()
+    active()
     gamekegs()
