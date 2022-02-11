@@ -26,7 +26,6 @@ def gamekegs():
 
         if driver1.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
            print('已签到')
-           break
         
         else :
          #   driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
