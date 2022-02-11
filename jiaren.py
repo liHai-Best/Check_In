@@ -10,12 +10,9 @@ def save_img(src):
         f.write(img.content)
 
 @retry(stop_max_attempt_number=5)
-
-driver = get_web_driver()
-
 def gamekegs():
     try:
-      #  driver = get_web_driver()
+        driver = get_web_driver()
         driver.get("https://jiaren.me/login")
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
@@ -37,6 +34,8 @@ def gamekegs():
         
 def active():
     try:
+        driver = get_web_driver()
+        
         if driver.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
            print('已签到')
     finally:
