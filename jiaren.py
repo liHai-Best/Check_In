@@ -10,7 +10,7 @@ def save_img(src):
         f.write(img.content)
 
 @retry(stop_max_attempt_number=5)
-def gamekegs():
+def jiaren():
     try:
         driver = get_web_driver()
         driver.get("https://jiaren.me/login")
@@ -23,13 +23,9 @@ def gamekegs():
 
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
-
-        if driver.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
-           print('已签到')
-        
-        else :
-         #   driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
-            driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
+         
+        if driver.find_elements_by_xpath("//*[@class='mobantu-check']") != []:
+            driver.find_element_by_xpath("//*[@class='mobantu-check']").click()
             print('佳人网签到成功')
     except:
         raise
@@ -37,4 +33,4 @@ def gamekegs():
         driver.quit()
       
 if __name__ == '__main__':
-    gamekegs()
+    jiaren()
