@@ -40,5 +40,5 @@ def active():
         driver.quit()
       
 if __name__ == '__main__':
-    active()
+  #  active()
     gamekegs()
