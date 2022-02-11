@@ -26,7 +26,7 @@ def gamekegs():
 
         if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
             driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
-            print('gamekegs签到成功')
+            print('佳人网签到成功')
     except:
         raise
     finally:
