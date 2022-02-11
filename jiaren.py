@@ -31,6 +31,14 @@ def gamekegs():
         raise
     finally:
         driver.quit()
-
+        
+def active():
+    try:
+        if driver.find_element_by_xpath("//*[@class='class="usercheck active']")=['已签到']:
+           print('已签到')
+    finaly:
+        driver.quit()
+      
 if __name__ == '__main__':
+    active()
     gamekegs()
