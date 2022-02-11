@@ -24,23 +24,17 @@ def gamekegs():
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
+        if driver1.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
+           print('已签到')
+           break
+        
+        else driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
             driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
             print('佳人网签到成功')
     except:
         raise
     finally:
         driver.quit()
-        
-def active():
-    try:
-        driver1 = get_web_driver()
-        
-        if driver1.find_element_by_xpath("//*[@class='usercheck active']")==['已签到']:
-           print('已签到')
-    finally:
-        driver1.quit()
       
 if __name__ == '__main__':
-    active()
     gamekegs()
