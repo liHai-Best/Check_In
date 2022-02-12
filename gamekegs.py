@@ -24,8 +24,8 @@ def gamekegs():
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
-            driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
+        if driver.find_elements_by_xpath("//*[@class='mobantu-check']") != []:
+            driver.find_element_by_xpath("//*[@class='mobantu-check']").click()
             print('gamekegs签到成功')
     except:
         raise
